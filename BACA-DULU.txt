@@ -1,0 +1,43 @@
+CATATAN VERSI 4 (koreksi)
+  - index.html = homepage "Sejarah Uang Kertas" (satu layar, tanpa scroll di layar lebar/TV).
+    TIDAK memakai Lynuxs (tidak memuat css/lynuxs.css maupun js Lynuxs).
+  - Lynuxs HANYA ada di page.html. Ukurannya diperkecil di css/lynuxs.css
+    (idle: clamp(56px, 4.2vw, 80px); HP <=560px: 64px). Menu, interaksi, dan animasi lama tidak diubah.
+  - Uang Rupe-Lumpunk (10/30/67/100) tetap dipakai sebagai ilustrasi di kedua halaman.
+
+RUPE-LUMPUNK — Proyek IPS Kelompok ke-3  (IPS-MONEY, versi 3)
+================================================================
+Buka index.html (klik dua kali). Semua file harus tetap satu folder.
+
+  index.html           HOMEPAGE baru (judul, kelompok, anggota, galeri 4 uang,
+                       tombol "Masuk ke Presentasi" -> page.html)
+  page.html            PRESENTASI IPS lama (isi index.html sebelumnya, utuh)
+  js/rplk-money.js     SUMBER TUNGGAL desain uang 10 / 30 / 67 / 100 RPLK
+                       (dipakai index.html & page.html)
+  css/lynuxs.css       gaya Lynuxs + menu/panel asli (+ lapisan idle/kostum di akhir file)
+  js/lynuxs.js         mesin animasi Lynuxs (animasi lama utuh; default DIAM)
+  js/lynuxs-features.js MENU ASLI (Kalkulator / Lynuxs AI / FAQ) - tidak diubah
+  lynuxs.html          salinan markup Lynuxs terbaru (referensi)
+
+MENGGANTI GAMBAR DI LINGKARAN TENGAH UANG
+  1. Taruh gambar di folder assets/ (buat foldernya), mis. assets/potret-10.png
+  2. Buka js/rplk-money.js, isi RPLK_SLOT_IMAGES di bagian atas:
+       10: "assets/potret-10.png", 30: "...", 67: "...", 100: "..."
+  Kosong ("") = placeholder (lingkaran putus-putus "SLOT GAMBAR"). Gambar otomatis
+  dipotong bulat. Berlaku di homepage DAN presentasi sekaligus.
+
+LYNUXS
+  - Diam di pojok kanan bawah (position: fixed), tidak bergerak sendiri.
+  - Klik DUA KALI (desktop) / ketuk DUA KALI (Android) / Enter = menu asli 3 ikon.
+  - Ketuk/klik SEKALI = satu animasi lama acak (hop, bounce, menoleh, dll.).
+  - Seret & lempar = fisika lama; setelah mendarat kembali ke pojok.
+  - Animasi jalan-jalan lama: buka page.html?lynuxs=active, atau di konsol
+    window.Lynuxs.setIdle(false); window.Lynuxs.play("hop").
+  - Kostum: jas hitam + piping hijau hutan, rompi hitam, kemeja krem, rantai emas +
+    liontin RPLK, arloji emas, pin emas, monokel emas satu lensa (kacamata dua lensa
+    lama tetap ada di markup, hanya disembunyikan pada skin02).
+
+CATATAN
+  - Folder assets/ (rupe-lumpunk-stack.png, history-coin.png, dll.) TIDAK ada di ZIP
+    yang diterima. Semua <img> memakai onerror/fallback SVG, jadi tidak rusak.
+  - Lynuxs AI butuh internet + Cloudflare Worker proyek lama (AI_ENDPOINT).

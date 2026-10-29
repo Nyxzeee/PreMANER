@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sejarah Uang Kertas — Proyek IPS Kelompok ke-3</title>
+		<meta
+			name="description"
+			content="Sejarah Uang Kertas: dari awal kemunculan hingga era modern. Presentasi IPS Kelompok ke-3."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--cream: #f3eedc;
+				--green: #183f32;
+				--navy: #192b45;
+				--gold: #c7a45b;
+				--muted: #e8e0c9;
+				--text: #252b28;
+				--red: #b62532;
+				--serif: "Playfair Display", Georgia, serif;
+				--sans: "Inter", Helvetica, Arial, sans-serif;
+				--t: 0.25s ease;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				background: var(--cream);
+				color: var(--text);
+				font: 400 1rem/1.7 var(--sans);
+				overflow-x: hidden;
+				-webkit-font-smoothing: antialiased;
+			}
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+			ol {
+				list-style: none;
+			}
+			svg {
+				max-width: 100%;
+				display: block;
+			}
+			:focus-visible {
+				outline: 3px solid var(--gold);
+				outline-offset: 3px;
+			}
+			.wrap {
+				width: 100%;
+				max-width: 1160px;
+				margin: 0 auto;
+				padding: 0 22px;
+			}
+			.logo {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				font: 700 1rem var(--serif);
+				letter-spacing: 0.12em;
+				color: var(--green);
+			}
+			.logo svg {
+				width: 30px;
+				height: 30px;
+			}
+			.logo {
+				white-space: nowrap;
+			}
+			.top {
+				position: relative;
+				z-index: 2;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				height: 76px;
+				border-bottom: 1px solid var(--gold);
+			}
+			.top small {
+				font: 600 0.72rem var(--sans);
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				color: var(--red);
+			}
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				min-height: 52px;
+				padding: 12px 28px;
+				font: 600 1rem var(--sans);
+				border: 2px solid var(--green);
+				background: var(--green);
+				color: var(--cream);
+				cursor: pointer;
+				transition: var(--t);
+			}
+			.btn:hover {
+				background: var(--navy);
+				border-color: var(--navy);
+			}
+			.btn:hover span {
+				transform: translateX(4px);
+			}
+			.btn span {
+				transition: var(--t);
+			}
+			.home {
+				position: relative;
+				overflow: hidden;
+				min-height: calc(100vh - 77px);
+				display: flex;
+				align-items: center;
+				padding: 44px 0 72px;
+			}
+			.home::before {
+				content: "";
+				position: absolute;
+				right: -200px;
+				top: 50%;
+				width: 700px;
+				height: 700px;
+				margin-top: -350px;
+				border-radius: 50%;
+				background: repeating-radial-gradient(
+					circle,
+					transparent 0 14px,
+					rgba(24, 63, 50, 0.1) 14px 15px
+				);
+				pointer-events: none;
+			}
+			.hgrid {
+				position: relative;
+				z-index: 1;
+				display: grid;
+				grid-template-columns: 1.02fr 1fr;
+				gap: 56px;
+				align-items: center;
+			}
+			.stamp {
+				display: inline-block;
+				font: 600 0.78rem var(--sans);
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--red);
+				border: 1.5px solid var(--red);
+				padding: 6px 14px;
+				margin-bottom: 22px;
+				transform: rotate(-1.5deg);
+			}
+			h1 {
+				font: 900 clamp(3.4rem, 10.5vw, 7rem)/0.92 var(--serif);
+				letter-spacing: -0.02em;
+				color: var(--green);
+				margin-bottom: 22px;
+			}
+			h1 em {
+				display: block;
+				font-style: italic;
+				font-weight: 600;
+				color: var(--gold);
+				padding-left: 0.5em;
+			}
+			.kelompok {
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				font: 700 clamp(0.9rem, 2.4vw, 1.1rem) var(--sans);
+				letter-spacing: 0.16em;
+				text-transform: uppercase;
+				color: var(--navy);
+				margin-bottom: 16px;
+			}
+			.kelompok::after {
+				content: "";
+				height: 1px;
+				width: 64px;
+				background: var(--gold);
+			}
+			.sub {
+				max-width: 520px;
+				color: var(--navy);
+				margin-bottom: 26px;
+			}
+			.roster {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 10px;
+				max-width: 540px;
+				margin-bottom: 34px;
+			}
+			.roster li {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				gap: 2px;
+				padding: 12px 14px 12px 18px;
+				background: rgba(232, 224, 201, 0.7);
+				border: 1px solid var(--gold);
+				border-left: 5px solid var(--green);
+			}
+			.roster .nm {
+				font: 700 1.08rem/1.25 var(--serif);
+				color: var(--green);
+			}
+			.roster .ab {
+				font: 600 0.8rem var(--sans);
+				letter-spacing: 0.14em;
+				color: var(--red);
+			}
+			.gal {
+				position: relative;
+				width: 100%;
+				max-width: 540px;
+				margin: 0 auto;
+				aspect-ratio: 1/1.16;
+			}
+			.gal .ring {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 112%;
+				aspect-ratio: 1;
+				translate: -50% -50%;
+				pointer-events: none;
+			}
+			.bn {
+				position: absolute;
+				width: 66%;
+				filter: drop-shadow(0 16px 18px rgba(25, 43, 69, 0.3));
+				transition: transform 0.45s ease;
+			}
+			.bn:hover {
+				transform: rotate(0) scale(1.04) !important;
+				z-index: 5;
+			}
+			.bn100 {
+				left: 0;
+				top: 0;
+				transform: rotate(-4deg);
+				z-index: 2;
+			}
+			.bn67 {
+				right: 0;
+				top: 22%;
+				transform: rotate(5deg);
+				z-index: 3;
+			}
+			.bn30 {
+				left: 2%;
+				top: 46%;
+				transform: rotate(3deg);
+				z-index: 2;
+			}
+			.bn10 {
+				right: 0;
+				top: 70%;
+				transform: rotate(-4deg);
+				z-index: 3;
+			}
+			@media (max-width: 900px) {
+				.hgrid {
+					grid-template-columns: 1fr;
+					gap: 40px;
+				}
+				.home {
+					padding: 32px 0 56px;
+					min-height: 0;
+				}
+				.home::before {
+					right: -340px;
+				}
+			}
+			@media (max-width: 560px) {
+				.top small {
+					display: none;
+				}
+				.kelompok {
+					letter-spacing: 0.1em;
+				}
+				.kelompok::after {
+					display: none;
+				}
+			}
+			@media (max-width: 340px) {
+				.roster {
+					grid-template-columns: 1fr;
+				}
+				.btn {
+					width: 100%;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				* {
+					transition: none !important;
+				}
+			}
+		</style>
+		<!-- PATCH TV TOUCHSCREEN: homepage satu layar tanpa scroll (layar lebar / TV).
+		     Hanya menambah aturan; aturan lama di atas tidak diubah. -->
+		<style id="tv-fit">
+			.btn {
+				touch-action: manipulation;
+				-webkit-tap-highlight-color: transparent;
+				user-select: none;
+				-webkit-user-select: none;
+			}
+			.btn:active {
+				background: var(--navy);
+				border-color: var(--navy);
+				transform: scale(0.97);
+			}
+
+			/* Layar lebar (TV 16:9, 1920×1080, 1366×768, dst.): semua muat dalam satu viewport.
+			   --s = 1/100 lebar layar 16:9 yang muat; ukuran elemen ikut ruang yang tersedia,
+			   tetapi tidak pernah di bawah batas bawah yang masih terbaca dari jarak TV. */
+			@media (min-width: 901px) and (min-aspect-ratio: 5/4) {
+				:root {
+					--s: min(1vw, 1.7778vh);
+					--topH: clamp(52px, calc(var(--s) * 4), 80px);
+					--padY: clamp(10px, calc(var(--s) * 1.6), 32px);
+					--avail: calc(100vh - var(--topH) - 2 * var(--padY));
+				}
+				@supports (height: 100dvh) {
+					:root {
+						--avail: calc(100dvh - var(--topH) - 2 * var(--padY));
+					}
+				}
+				html,
+				body {
+					height: 100%;
+					overflow: hidden;
+					overscroll-behavior: none;
+				}
+				body {
+					display: flex;
+					flex-direction: column;
+					height: 100vh;
+					touch-action: manipulation;
+				}
+				@supports (height: 100dvh) {
+					body {
+						height: 100dvh;
+					}
+				}
+
+				.wrap {
+					max-width: none;
+					padding: 0;
+					width: min(calc(100% - 6vw), calc(var(--s) * 94));
+				}
+				.top {
+					flex: none;
+					height: var(--topH);
+				}
+				.logo {
+					font-size: clamp(15px, calc(var(--s) * 0.95), 22px);
+				}
+				.logo svg {
+					width: clamp(26px, calc(var(--s) * 1.6), 38px);
+					height: clamp(26px, calc(var(--s) * 1.6), 38px);
+				}
+				.top small {
+					font-size: clamp(11px, calc(var(--s) * 0.7), 15px);
+				}
+
+				.home {
+					flex: 1 1 auto;
+					min-height: 0;
+					height: auto;
+					padding: var(--padY) 0;
+				}
+				.hgrid {
+					height: 100%;
+					grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
+					grid-template-rows: minmax(0, 1fr);
+					gap: calc(var(--s) * 3);
+					align-items: center;
+				}
+				.hleft {
+					min-width: 0;
+				}
+
+				.stamp {
+					font-size: clamp(11px, calc(var(--s) * 0.72), 16px);
+					padding: clamp(4px, calc(var(--s) * 0.3), 7px)
+						clamp(10px, calc(var(--s) * 0.7), 16px);
+					margin-bottom: clamp(8px, calc(var(--s) * 1), 22px);
+				}
+				h1 {
+					font-size: clamp(44px, calc(var(--s) * 5.2), 108px);
+					margin-bottom: clamp(8px, calc(var(--s) * 0.9), 22px);
+				}
+				.kelompok {
+					font-size: clamp(13px, calc(var(--s) * 0.95), 22px);
+					margin-bottom: clamp(8px, calc(var(--s) * 0.8), 18px);
+				}
+				.sub {
+					font-size: clamp(14px, calc(var(--s) * 0.95), 22px);
+					line-height: 1.5;
+					max-width: min(100%, calc(var(--s) * 32));
+					margin-bottom: clamp(10px, calc(var(--s) * 1.2), 26px);
+				}
+				.roster {
+					max-width: min(100%, calc(var(--s) * 30));
+					gap: clamp(8px, calc(var(--s) * 0.55), 14px);
+					margin-bottom: clamp(12px, calc(var(--s) * 1.5), 32px);
+				}
+				.roster li {
+					padding: clamp(7px, calc(var(--s) * 0.6), 14px)
+						clamp(10px, calc(var(--s) * 0.8), 16px)
+						clamp(7px, calc(var(--s) * 0.6), 14px)
+						clamp(12px, calc(var(--s) * 0.95), 20px);
+				}
+				.roster .nm {
+					font-size: clamp(15px, calc(var(--s) * 1.05), 26px);
+					line-height: 1.25;
+				}
+				.roster .ab {
+					font-size: clamp(12px, calc(var(--s) * 0.8), 19px);
+				}
+				.btn {
+					min-height: clamp(52px, calc(var(--s) * 3.6), 88px);
+					padding: 0 clamp(24px, calc(var(--s) * 1.9), 48px);
+					font-size: clamp(16px, calc(var(--s) * 1.1), 28px);
+					gap: clamp(10px, calc(var(--s) * 0.7), 16px);
+				}
+
+				.gal {
+					width: min(100%, calc(var(--avail) / 1.16));
+					max-width: none;
+					justify-self: center;
+				}
+				.home::before {
+					width: calc(var(--s) * 36);
+					height: calc(var(--s) * 36);
+					margin-top: calc(var(--s) * -18);
+					right: calc(var(--s) * -10);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/rplk-money.js?v=3"></script>
+		<header class="wrap top">
+			<a
+				href="index.html"
+				class="logo"
+				aria-label="Rupe-Lumpunk, halaman awal"
+			>
+				<svg viewBox="-50 -50 100 100" aria-hidden="true">
+					<circle
+						r="44"
+						fill="none"
+						stroke="#183F32"
+						stroke-width="4"
+					/>
+					<polygon
+						points="0,-30 17.6,24.3 -28.5,-9.3 28.5,-9.3 -17.6,24.3"
+						fill="#B62532"
+					/>
+				</svg>
+				RUPE-LUMPUNK
+			</a>
+			<small>Presentasi IPS · Kelas 9</small>
+		</header>
+		<main class="home">
+			<div class="wrap hgrid">
+				<section class="hleft" aria-labelledby="judul">
+					<span class="stamp">IPS · Ekonomi · Kelas 9</span>
+					<h1 id="judul">Uang <em>Kertas</em></h1>
+					<p class="kelompok">PROYEK IPS — KELOMPOK KE-3</p>
+					<p class="sub">
+						<strong>Dari awal kemunculan hingga era modern.</strong>
+						Menelusuri perkembangan uang kertas sebagai alat
+						pembayaran. Empat lembar uang Rupe-Lumpunk rekaan kami
+						menjadi ilustrasi dalam presentasi ini.
+					</p>
+					<ol class="roster" aria-label="Anggota kelompok">
+						<li>
+							<span class="nm">Bagas Dwi kurniawan</span
+							><span class="ab">(6)</span>
+						</li>
+						<li>
+							<span class="nm">Juike putri sari</span
+							><span class="ab">(15)</span>
+						</li>
+						<li>
+							<span class="nm">M.Tsaqif annizar</span
+							><span class="ab">(24)</span>
+						</li>
+						<li>
+							<span class="nm">Siti aneyra A.P.</span
+							><span class="ab">(32)</span>
+						</li>
+					</ol>
+					<a class="btn" href="page.html"
+						>Masuk ke Presentasi
+						<span aria-hidden="true">→</span></a
+					>
+				</section>
+				<section
+					class="gal"
+					aria-label="Ilustrasi uang kertas rekaan Rupe-Lumpunk: 10, 30, 67, dan 100"
+				>
+					<svg
+						class="ring"
+						viewBox="-100 -100 200 200"
+						aria-hidden="true"
+					>
+						<g fill="none" stroke="#C7A45B">
+							<circle r="98" stroke-width=".8" opacity=".6" />
+							<circle
+								r="92"
+								stroke-width="3"
+								stroke-dasharray="1 5"
+								opacity=".7"
+							/>
+							<circle r="84" stroke-width=".8" opacity=".5" />
+						</g>
+					</svg>
+					<svg
+						class="bn bn100"
+						viewBox="0 0 600 300"
+						role="img"
+						aria-label="Uang 100 Rupe-Lumpunk"
+					>
+						<use href="#rplk-100" />
+					</svg>
+					<svg
+						class="bn bn67"
+						viewBox="0 0 600 300"
+						role="img"
+						aria-label="Uang 67 Rupe-Lumpunk"
+					>
+						<use href="#rplk-67" />
+					</svg>
+					<svg
+						class="bn bn30"
+						viewBox="0 0 600 300"
+						role="img"
+						aria-label="Uang 30 Rupe-Lumpunk"
+					>
+						<use href="#rplk-30" />
+					</svg>
+					<svg
+						class="bn bn10"
+						viewBox="0 0 600 300"
+						role="img"
+						aria-label="Uang 10 Rupe-Lumpunk"
+					>
+						<use href="#rplk-10" />
+					</svg>
+				</section>
+			</div>
+		</main>
+	</body>
+</html>
